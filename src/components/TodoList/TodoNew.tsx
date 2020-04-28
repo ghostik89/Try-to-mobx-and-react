@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useStore } from "../../helpers/use-store";
+import { Input, Button } from "antd";
 
 export const TodoNew = () => {
     const [newTodo, setTodo] = useState('');
@@ -12,8 +13,8 @@ export const TodoNew = () => {
 
     return (
         <div className="todo-new">
-            <input type="text" value={newTodo} onChange={(e) => setTodo(e.target.value)}/>
-            <button onClick={addTodo}>Add Todo</button>
+            <Input placeholder="Basic usage" value={newTodo} onChange={(e) => setTodo(e.target.value)}/>
+            <Button type="primary" onClick={addTodo}>edit</Button>
         </div>
     )
 };

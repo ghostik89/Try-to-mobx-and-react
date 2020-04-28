@@ -7,9 +7,9 @@ import {StoreProvider} from "./helpers/store-provider";
 import {TodoList} from "./store/TodoList";
 
 const todoList = new TodoList([
-    'Should Starting Writing in React',
-    'Should Learn MobX',
-    'Should Watch Once Piece :)'
+    'Побить Зазу',
+    'Повысить самооценку',
+    'Перестать загонятся'
 ]);
 
 //@ts-ignore - for debugging

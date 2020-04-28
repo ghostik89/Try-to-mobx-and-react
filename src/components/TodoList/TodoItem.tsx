@@ -2,6 +2,16 @@ import React, { useState } from "react";
 import { useStore } from "../../helpers/use-store";
 import TodoItem from "../../store/TodoItem";
 import { Button } from 'antd';
+import { Typography } from 'antd';
+import { Checkbox } from 'antd';
+import { Input } from 'antd';
+
+const { Text } = Typography;
+
+
+const divStyles = {
+    "margin": '1rem'
+};
 
 interface Props {
     todo: TodoItem;
@@ -24,17 +34,15 @@ export const TodoItemComponent = ({todo}: Props) => {
             {
                 isEditing ?
                     <div>
-                        <input type="text" onChange={(e) => setText(e.target.value)}/>
-                        <Button type="primary">Primary</Button>
-                        <button onClick={saveText}>save</button>
+                        <Input placeholder="Basic usage" onChange={(e) => setText(e.target.value)}/>
+                        <Button style={divStyles} type="primary" onClick={saveText}>Save</Button>
                     </div>
                     :
                     <div>
-                        <span>{todo.text}</span>
-                        <input type="checkbox" onChange={todo.toggleIsDone} defaultChecked={todo.isDone}></input>
-                        <Button type="primary">Primary</Button>
-                        <button onClick={() => setEdit(true)}>edit</button>
-                        <button onClick={() => todoList.removeTodo(todo)}>X</button>
+                        <Text>{todo.text}</Text>
+                        <Checkbox onChange={todo.toggleIsDone}>Checkbox</Checkbox>
+                        <Button style={divStyles} type="primary" onClick={() => setEdit(true)}>edit</Button>
+                        <Button type="primary" danger onClick={() => todoList.removeTodo(todo)}>Delete</Button>
                     </div>
             }
         </div>

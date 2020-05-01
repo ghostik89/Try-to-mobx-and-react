@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { useStore } from "../../helpers/use-store";
-import { Input, Button } from "antd";
+import { Input, Button, Space } from "antd";
 
-export const TodoNew = () => {
+
+export interface TodoNewProps {
+    className?: string
+}
+
+export const TodoNew = ({className = "ew"}: TodoNewProps) => {
     const [newTodo, setTodo] = useState('');
     const todoList = useStore();
 
@@ -12,9 +17,9 @@ export const TodoNew = () => {
     };
 
     return (
-        <div className="todo-new">
+        <Space className={className}>
             <Input placeholder="Basic usage" value={newTodo} onChange={(e) => setTodo(e.target.value)}/>
-            <Button type="primary" onClick={addTodo}>edit</Button>
-        </div>
+            <Button type="primary" onClick={addTodo}>Add</Button>
+        </Space>
     )
 };

@@ -1,4 +1,4 @@
-import { observable, action } from "mobx";
+import { observable, action, computed } from "mobx";
 
 
 export default class TodoItem{
@@ -9,7 +9,7 @@ export default class TodoItem{
 
     constructor(text: string){
         this.text = text;
-    }    
+    }
 
     @action
     toggleIsDone = () =>{
@@ -19,5 +19,10 @@ export default class TodoItem{
     @action
     updateText = (text: string) =>{
         this.text = text;
+    }
+
+    @computed
+    get IsDoneTodo(): boolean {
+        return this.isDone;
     }
 }

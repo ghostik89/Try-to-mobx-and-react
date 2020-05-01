@@ -1,24 +1,24 @@
-import { Button, Space, Upload, Popconfirm } from 'antd';
-import { UploadOutlined } from '@ant-design/icons';
 import React from 'react';
-import { TodoList } from '../store/TodoList';
-import TodoItem from '../store/TodoItem';
 import { TodoNew } from '../components/TodoList/TodoNew';
 import { TodoListComponent } from '../components/TodoList/TodoList';
+import "./stylesTodo.css";
+import { Layout } from 'antd';
 
 interface Props {
-    history: {
+    history?: {
         push(url: string): void;
     };
-}
+} 
 
 
 //todo: add history props
-export const  TodoListPage = () => {
+export const  TodoListPage = ({history}: Props) => {
   return (
-    <Space>
-        <TodoNew/>
-        <TodoListComponent/>
-    </Space>
+    <>
+    <Layout.Content className={"layoutStyle"}>
+      <TodoNew className={"layoutStyle__todoNew"}/>
+      <TodoListComponent/>
+    </Layout.Content>
+    </>
   );
 }

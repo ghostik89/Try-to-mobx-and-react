@@ -1,0 +1,13 @@
+.layoutStyle{
+    background-color: #ffffff;
+    padding-top: 3rem;
+}
+
+.layoutStyle__todoNew{
+    margin: auto;
+    padding-bottom: 1.5rem;
+}
+
+.layoutStyle__todoList__todoItem{
+    margin: 1rem;
+}

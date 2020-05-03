@@ -10,9 +10,7 @@ interface Props {
     };
 } 
 
-
-//todo: add history props
-export const  TodoListPage = ({history}: Props) => {
+export const  TodoListPage = () => {
   return (
     <>
     <Layout.Content className={"layoutStyle"}>

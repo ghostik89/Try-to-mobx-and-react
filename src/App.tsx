@@ -6,7 +6,7 @@ import { MyHeader } from './components/Header/MyHeader';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <MyHeader/>
       <TodoListPage />
     </div>
